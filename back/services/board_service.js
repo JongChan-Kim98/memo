@@ -27,7 +27,7 @@ module.exports.viewPost = async() => {
 module.exports.deletePost = async(postId) => {
   try {
     return await Post.destroy({
-      where : postId
+      where : {postId: postId}
     })
   } catch(error) {
     console.log(error);

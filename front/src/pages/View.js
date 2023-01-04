@@ -10,8 +10,8 @@ const View = () => {
   const border = useSelector(state=>state.board.posts)
   
 
-  const deleteHandler = () => {
-    dispatch(deletePost())
+  const deleteHandler = (postId) => {
+    dispatch(deletePost(postId))
   }
 
   const editHandler = () => {

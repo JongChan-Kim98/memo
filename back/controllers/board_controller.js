@@ -26,6 +26,14 @@ exports.viewPost = async (req, res) => {
   res.send(datas)
 };
 
+exports.getPost = async (req, res) => {
+  let postId = req.params.id;
+  // console.log(req);
+  const post = await boardService.getPost(postId);
+  res.send(post);
+};
+
+
 exports.deletePost = async (req, res) => {
   console.log(req)
   //let postId = req.params.id;

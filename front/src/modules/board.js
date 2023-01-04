@@ -58,6 +58,7 @@ export default function board(state = init, action) {
     case "ADD_POST":
       const newPost = { ...payload }; // addPost 의 b = 제목 내용 
       console.log(newPost);
+      // ...payload : 새소 생성된 게시글 내용 posts :[...state.posts : 기존 게시글이 담겨있는 배열, 새로운 게시글]
       return { ...payload, posts: [...state.posts, newPost] };
 
     case "GET_BORDER":
