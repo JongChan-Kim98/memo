@@ -27,7 +27,8 @@ exports.viewPost = async (req, res) => {
 };
 
 exports.deletePost = async (req, res) => {
-  let postId = req.params.id;
-  const c = await boardService.deletePost(postId);
-  res.send(c)
+  console.log(req)
+  //let postId = req.params.id;
+  //const c = await boardService.deletePost(postId);
+  //res.send(c)
 }

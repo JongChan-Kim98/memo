@@ -18,7 +18,7 @@ export const addPost = (title, content) => {
     });
     const { data } = post;
     // controller에서 send로 보내니까 그제서야 여기 console이 찍혔다(신기
-    console.log(post);
+    console.log(data);
     dispatch({ type: "ADD_POST", payload: data });
   };
 };
