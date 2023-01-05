@@ -22,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(options));
 
+// 대분류 라우터는 복수형으로 써준다 웬만하면 s 붙이셈 
 app.use("/board", boardRouter);
 
 

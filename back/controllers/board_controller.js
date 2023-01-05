@@ -33,10 +33,20 @@ exports.getPost = async (req, res) => {
   res.send(post);
 };
 
-
 exports.deletePost = async (req, res) => {
-  console.log(req)
-  //let postId = req.params.id;
-  //const c = await boardService.deletePost(postId);
+  let postId = req.params.id;
+  console.log(postId);
+  const c = await boardService.deletePost(postId);
   //res.send(c)
+}
+
+exports.editPost = async(req,res) => {
+  try {
+    const { title, content } = req.body;
+    const newPost = await boardService.editPost(id, title, content);
+     res.send(newPost);
+  } catch (error) {
+    res.send(error);
+  }
+
 }

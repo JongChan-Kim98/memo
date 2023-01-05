@@ -33,3 +33,16 @@ module.exports.deletePost = async(postId) => {
     console.log(error);
   }
 }
+
+module.exports.editPost = async (id, title, content) => {
+  try {
+    return await Post.update(
+      { id, title, content },
+      {
+        where: { postId: id },
+      }
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};

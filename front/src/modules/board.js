@@ -5,8 +5,8 @@ import axios from "axios";
 
 // 액션 생성 함수
 export const addPost = (title, content) => {
-  console.log(title);
-  console.log(content);
+  // console.log(title);
+  // console.log(content);
   return async (dispatch, getState) => {
     const post = await axios({
       method: "post",
@@ -35,16 +35,35 @@ export function viewPost(){
   }
 }
 
-export const deletePost = () => {
+export const deletePost = (postId) => {
   return async (dispatch, getState) => {
     const drop = await axios({
       method: "delete",
-      url : "http://localhost:8000/board/view"         
+      url : `http://localhost:8000/board/${postId}`        
     })
     const {data} = drop
     dispatch({type: "DELETE_BORDER", payload : data})
   }
 }
+
+export const editPost = (postId , title, content) => {
+  // console.log(title);
+  // console.log(content);
+  return async (dispatch, getState) => {
+    const post = await axios({
+      method: "put",
+      url: `http://localhost:8000/board/${postId}`,
+      data: {
+        title,
+        content,
+      },
+    });
+    const { data } = post;
+    console.log(data);
+    dispatch({ type: "EDIT_BORDER", payload: data });
+  };
+};
+
 
 // 초기값
 const init = {
@@ -65,6 +84,9 @@ export default function board(state = init, action) {
       return {...init, posts : payload};
 
     case "DELETE_BORDER":
+      return {...init, posts : payload}
+
+    case "EDIT_BORDER":
       return {...init, posts : payload}
 
     default:
