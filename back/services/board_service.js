@@ -37,7 +37,7 @@ module.exports.deletePost = async(postId) => {
 module.exports.editPost = async (id, title, content) => {
   try {
     return await Post.update(
-      { id, title, content },
+      { title, content },
       {
         where: { postId: id },
       }

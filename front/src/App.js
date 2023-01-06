@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Board />} />
         <Route path="/write" element={<Write />} />
         <Route path="/view" element={<View/>}/>
-        <Route path="/:id/edit" element={<Edit/>}/>
+        <Route path="/:id" element={<Edit/>}/>
       </Routes>
     </>
   );

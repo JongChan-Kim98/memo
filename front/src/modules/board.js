@@ -47,8 +47,8 @@ export const deletePost = (postId) => {
 }
 
 export const editPost = (postId , title, content) => {
-  // console.log(title);
-  // console.log(content);
+   console.log(title);
+   console.log(content);
   return async (dispatch, getState) => {
     const post = await axios({
       method: "put",
@@ -59,7 +59,7 @@ export const editPost = (postId , title, content) => {
       },
     });
     const { data } = post;
-    console.log(data);
+    console.log("!@#!@#!@#"+data);
     dispatch({ type: "EDIT_BORDER", payload: data });
   };
 };

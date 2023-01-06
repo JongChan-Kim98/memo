@@ -43,7 +43,9 @@ exports.deletePost = async (req, res) => {
 exports.editPost = async(req,res) => {
   try {
     const { title, content } = req.body;
-    const newPost = await boardService.editPost(id, title, content);
+    const postId = req.params.id + 1;
+    console.log(postId)
+    const newPost = await boardService.editPost(postId, title, content);
      res.send(newPost);
   } catch (error) {
     res.send(error);

@@ -28,7 +28,7 @@ const View = () => {
           {/* deleteHandler(postId) 는 반환값이 있고 인자값을 가져가기 위해 그럼 */}
           <button onClick={() => deleteHandler(postId)}>삭제</button>
           {/* 아래 부분은 return 값이 생략된 값으로 되는거임 */}
-          <button onClick={() => { nav(`/${postId}/edit`) }}>수정</button><br />
+          <button onClick={() => { nav(`/${postId}`) }}>수정</button><br />
         </div>
       ))}
     </div>
